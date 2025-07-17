@@ -1,0 +1,130 @@
+/* Custom CSS untuk Dashboard */
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    background-color: #e0e5ec; /* Latar belakang abu-abu terang untuk efek neumorphism */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Pastikan body mengambil tinggi penuh viewport */
+}
+
+.main-content {
+    background-color: #e0e5ec; /* Latar belakang yang sama dengan body */
+    flex: 1;
+    padding: 2.5rem; /* Menambah padding untuk ruang lebih */
+}
+
+/* Base card styling for 3D effect */
+.card {
+    border: none; /* Hilangkan border default */
+    border-radius: 1.5rem; /* Bulatkan sudut lebih banyak */
+    background-color: #e0e5ec; /* Warna dasar card */
+    position: relative; /* Penting untuk efek pseudo-element atau depth */
+    transition: all 0.3s ease-in-out; /* Transisi untuk hover effect */
+
+    /* Basic shadow untuk kesan "raised" */
+    box-shadow: 
+        7px 7px 15px rgba(174, 174, 192, 0.4), /* Shadow gelap di kanan bawah */
+        -7px -7px 15px rgba(255, 255, 255, 0.9); /* Highlight terang di kiri atas */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Sedikit naik saat dihover */
+    box-shadow: 
+        10px 10px 20px rgba(174, 174, 192, 0.5), /* Shadow lebih besar saat hover */
+        -10px -10px 20px rgba(255, 255, 255, 1); /* Highlight lebih besar saat hover */
+}
+
+/* Card Headers with Gradients and subtle depth */
+.card-header {
+    border-top-left-radius: 1.2rem !important; /* Sesuaikan radius dengan card */
+    border-top-right-radius: 1.2rem !important; /* Sesuaikan radius dengan card */
+    position: relative;
+    z-index: 1; /* Pastikan di atas bayangan card-body */
+    color: #fff; /* Warna teks header */
+    padding: 1.2rem 1.5rem; /* Padding lebih */
+}
+
+.card-header.bg-primary {
+    background: linear-gradient(145deg, #2196F3, #1565C0) !important; /* Gradien biru yang lebih dinamis */
+}
+.card-header.bg-success {
+    background: linear-gradient(145deg, #4CAF50, #2E7D32) !important; /* Gradien hijau yang lebih dinamis */
+}
+.card-header.bg-info {
+    background: linear-gradient(145deg, #03A9F4, #0277BD) !important; /* Gradien info yang lebih dinamis */
+}
+
+/* Specific styling for statistic cards */
+.card.shadow-sm.text-center.h-100 {
+    box-shadow: 
+        5px 5px 10px rgba(174, 174, 192, 0.3), /* Bayangan lebih kecil untuk card statistik */
+        -5px -5px 10px rgba(255, 255, 255, 0.8);
+}
+
+.card.shadow-sm.text-center.h-100:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        8px 8px 16px rgba(174, 174, 192, 0.4),
+        -8px -8px 16px rgba(255, 255, 255, 0.9);
+}
+
+
+/* Styling for income summary cards */
+.card.bg-success, .card.bg-info {
+    border-radius: 1.5rem; /* Consistent border radius */
+    padding: 1rem 0; /* Padding vertikal */
+    box-shadow: 
+        8px 8px 16px rgba(174, 174, 192, 0.4),
+        -8px -8px 16px rgba(255, 255, 255, 0.9);
+    color: #fff; /* Pastikan teks putih */
+}
+
+.card.bg-success:hover, .card.bg-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        12px 12px 24px rgba(174, 174, 192, 0.6),
+        -12px -12px 24px rgba(255, 255, 255, 1);
+}
+
+/* Text colors inside cards for better contrast */
+.card-body h6.text-muted {
+    color: #6c757d !important; /* Sedikit lebih gelap agar terlihat */
+}
+/* Notifikasi spesifik */
+.list-group-item {
+    background-color: #e0e5ec; /* Warna latar belakang item notifikasi */
+    border-color: rgba(0,0,0,0.05); /* Border yang lebih lembut */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.list-group-item:first-child {
+    border-top: none; /* Hilangkan border-top yang mungkin tumpang tindih */
+}
+
+/* Icons styling */
+.fa-bell, .fa-chart-pie, .fa-chart-line, .fa-inbox, .fa-exclamation-circle {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Bayangan kecil untuk ikon */
+}
+
+/* Utility classes for accessibility - keep as is */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Menyesuaikan Chart.js canvas agar terlihat menyatu */
+canvas {
+    background-color: #e0e5ec;
+    border-radius: 1rem;
+    box-shadow: 
+        inset 5px 5px 10px rgba(174, 174, 192, 0.3), /* Bayangan dalam untuk efek "tertekan" */
+        inset -5px -5px 10px rgba(255, 255, 255, 0.8);
+}
